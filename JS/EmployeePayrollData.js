@@ -1,4 +1,4 @@
-class EmployeePayRollData{
+class EmployeePayrollData{
 
     get id()
     {

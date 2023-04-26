@@ -1,6 +1,14 @@
-window.addEventListener('DOMContentLoaded',(event) => {
+window.addEventListener('DOMContentLoaded', (event) => {
+    employeePayrollList = getEmployeePayrollDataFromStorage();
+    console.log(employeePayrollList)
+    document.querySelector(".emp-count").textContent = employeePayrollList.length;
     createInnerHtml();
-})
+    localStorage.removeItem('editEmp');
+  });
+
+const getEmployeePayrollDataFromStorage = () => {
+    return localStorage.getItem('employeePayrollList') ? JSON.parse(localStorage.getItem('employeePayrollList')) : [];
+}
 
 const createInnerHtml = () => {
     const headerHtml =
@@ -33,13 +41,7 @@ const createInnerHtml = () => {
     }
     document.querySelector('#display').innerHTML = innerHtml;
 }
-const getDepartmentHtml = (departmentList) => {
-    let departmentHtml = '';
-    for(const department of departmentList){
-      departmentHtml = `${departmentHtml} <div class='dept-label'>${department}</div>`
-    }
-    return departmentHtml
-}
+
 const createEmployeePayrollJSON = () => {
     let employeePayrollListLocal = [
       {
@@ -68,4 +70,11 @@ const createEmployeePayrollJSON = () => {
       }
     ];
     return localStorage.getItem("employeePayrollList");
+}
+const getDepartmentHtml = (departmentList) => {
+    let departmentHtml = '';
+    for(const department of departmentList){
+      departmentHtml = `${departmentHtml} <div class='dept-label'>${department}</div>`
+    }
+    return departmentHtml
 }
