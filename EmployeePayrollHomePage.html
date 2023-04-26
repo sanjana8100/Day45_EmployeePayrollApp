@@ -32,6 +32,32 @@ href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600
     <a href="./EmployeePayrollForm.html" class="add-button">
     <img src="./Images/addUser.png"  alt="" width="20%" height="20%"> Add User </a> 
 </div>
+<table id="display" class="table">
+    <tr>
+       <th></th> 
+       <th>Name</th> 
+       <th>Gender</th> 
+       <th>Department</th> 
+       <th>Salary</th> 
+       <th>Start Date</th> 
+       <th>Actions</th>
+   </tr>
+   <tr> 
+       <td><img class="profile" alt="" src="./Images/displayImage1.png" width="20%" height="20%"> 
+       </td> 
+       <td>Narayan Mahadevan</td> 
+       <td>Male</td> 
+       <td><div class='dept-label'>HR</div>
+           <div class='dept-label'>Finance</div>
+       </td>
+       <td>3000000</td>
+       <td>1 Nov 2020</td>
+       <td> 
+           <img id="1" onclick="remove(this)" alt="delete" src="./Images/deleteIcon.jpg"width="3%" height="3%">
+           <img id="1" alt="edit" onclick="update(this)" src="./Images/editIcon.png"width="3%" height="3%"> 
+       </td> 
+   </tr>  
+</table>
 </div>
 </body>
 </html>
